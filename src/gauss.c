@@ -7,9 +7,8 @@
 int eliminate(Matrix *mat, Matrix *b) {
     int n = mat->rows; // liczba wierszy macierzy
 
-    // Eliminacja do postaci trojkatnej górnej
     for (int k = 0; k < n; k++) {
-        // Znajdowanie maksymalnego elementu w kolumnie do pivotowania
+        // znajdowanie maksymalnego elementu w kolumnie do przestawiania
         int maxRow = k;
         for (int i = k + 1; i < n; i++) {
             if (fabs(mat->data[i][k]) > fabs(mat->data[maxRow][k])) {
@@ -17,7 +16,7 @@ int eliminate(Matrix *mat, Matrix *b) {
             }
         }
 
-        // Zamiana wierszy w macierzy mat i wektorze b
+        // zamiana wierszy w macierzy mat i wektorze b
         if (maxRow != k) {
             double *tempRow = mat->data[k];
             mat->data[k] = mat->data[maxRow];
@@ -28,7 +27,7 @@ int eliminate(Matrix *mat, Matrix *b) {
             b->data[maxRow][0] = tempB;
         }
 
-        // Sprawdzanie, czy dzielenie przez 0 nie wystąpi
+        // sprawdzanie czy dzielenie przez 0 nie wystąpi
         if (fabs(mat->data[k][k]) < 1e-9) {
             return 1; // Macierz osobliwa
         }
@@ -40,7 +39,7 @@ int eliminate(Matrix *mat, Matrix *b) {
         }
         b->data[k][0] /= diagElement;
 
-        // Zerowanie elementów poniżej bieżącego wiersza
+        // zerowanie elementów poniżej bieżącego wiersza
         for (int i = k + 1; i < n; i++) {
             double factor = mat->data[i][k];
 
@@ -52,7 +51,7 @@ int eliminate(Matrix *mat, Matrix *b) {
         }
     }
 
-    // Redukcja do postaci schodkowej zredukowanej (RREF)
+    
     for (int k = n - 1; k >= 0; k--) {
         for (int i = k - 1; i >= 0; i--) {
             double factor = mat->data[i][k];
@@ -65,5 +64,5 @@ int eliminate(Matrix *mat, Matrix *b) {
         }
     }
 
-    return 0; // Eliminacja zakończona sukcesem
+    return 0; 
 }
