@@ -18,9 +18,9 @@ int eliminate(Matrix *mat, Matrix *b) {
 
         // zamiana wierszy w macierzy mat i wektorze b
         if (maxRow != k) {
-            double *tempRow = mat->data[k];
+            double *tempaaaRow = mat->data[k];
             mat->data[k] = mat->data[maxRow];
-            mat->data[maxRow] = tempRow;
+            mat->data[maxRow] = tempaaaRow;
 
             double tempB = b->data[k][0];
             b->data[k][0] = b->data[maxRow][0];
