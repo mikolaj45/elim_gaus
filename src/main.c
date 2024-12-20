@@ -15,7 +15,12 @@ int main(int argc, char ** argv) {
 
     if (A->r != b->r){
         printf("złe rozmiary macierzy\n");
-        return -1;
+        return -3;
+    }
+
+    if (b->r != 1){
+        printf("zły rozmiar tablicy b\n");
+        return -4;
     }
     // wywołanie eliminacji Gaussa która obejmuje również podstawienie wsteczne
     res = eliminate(A, b);
