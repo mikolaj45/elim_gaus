@@ -4,8 +4,8 @@ all:
 test: all
 	bin/gauss dane/A dane/b
 	bin/gauss dane/A_test1 dane/b_test1
+	bin/gauss dane/E dane/f
+	bin/gauss dane/C dane/d
 	
 	
-test1: all
-	bin/gauss dane/A_test1 dane/b_test1
 

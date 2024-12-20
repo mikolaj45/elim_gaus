@@ -1,11 +1,11 @@
 #include "gauss.h"
-
+#include <math.h>
 /**
  * Zwraca 0 - eliminacja zakonczona sukcesem
  * Zwraca 1 - macierz osobliwa - dzielenie przez 0
  */
 int eliminate(Matrix *mat, Matrix *b) {
-    int n = mat->rows; // liczba wierszy macierzy
+    int n = mat->r; // liczba wierszy macierzy
 
     for (int k = 0; k < n; k++) {
         // znajdowanie maksymalnego elementu w kolumnie do przestawiania
