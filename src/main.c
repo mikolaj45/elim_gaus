@@ -13,6 +13,10 @@ int main(int argc, char ** argv) {
     printToScreen(A);
     printToScreen(b);
 
+    if (A->r != b->r){
+        printf("złe rozmiary macierzy\n");
+        return -3;
+    }
     // wywołanie eliminacji Gaussa która obejmuje również podstawienie wsteczne
     res = eliminate(A, b);
 
