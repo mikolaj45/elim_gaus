@@ -1,11 +1,11 @@
 all:
-	gcc -Wall --pedantic src/*.c -o bin/gauss
+	gcc -Wall --pedantic src/gauss.c src/mat_io.c src/main.c -o bin/gauss
 
 test: all
 	bin/gauss dane/A dane/b
-
-test_case1: all
-	bin/gauss dane/C dane/d
-
-test_case2: all
+	bin/gauss dane/A_test1 dane/b_test1
 	bin/gauss dane/E dane/f
+	bin/gauss dane/C dane/d
+	
+	
+
