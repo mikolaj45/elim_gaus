@@ -18,7 +18,7 @@ int main(int argc, char ** argv) {
         return -3;
     }
 
-    if (b->r != 1){
+    if (b->c != 1){
         printf("zły rozmiar tablicy b\n");
         return -4;
     }
