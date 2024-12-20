@@ -15,7 +15,7 @@ int main(int argc, char ** argv) {
     printToScreen(A);
     printToScreen(b);
 
-    //gdy niezgodne liczby wierszys
+    //gdy niezgodne liczby wierszy
     if (A->r != b->r) {
         fprintf(stderr, "błąd: liczba wierszy macierzy A (%d) nie zgadza się z liczbą wierszy wektora b (%d).\n", A->r, b->r);
         freeMatrix(A);
